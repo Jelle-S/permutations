@@ -11,6 +11,6 @@
     ],
     "minimum-stability": "stable",
     "autoload": {
-      "psr-4": {"Jelle_S\\Util\\Permutation": "src/"}
+      "psr-4": {"Jelle_S\\Util\\Permutation\\": "src/"}
     }
 }
