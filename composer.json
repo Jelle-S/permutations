@@ -1,0 +1,16 @@
+{
+    "name": "jelle-s/permutations",
+    "description": "Generates (lexographical) permutations of numbers.",
+    "type": "library",
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "Jelle Sebreghts",
+            "email": "sebreghts.jelle@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+      "psr-4": {"Jelle_S\\Util\\Permutation": "src/"}
+    }
+}
