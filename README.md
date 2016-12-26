@@ -5,13 +5,17 @@ use Jelle_S\Util\Permutation\LexographicalPermutation;
 $number = 12345;
 $next = LexographicalPermutation::getNextPermutation($number);
 print "The next lexographical permutation of {$number} is {$next}.\n";
+
 $number = 32154;
 $previous = LexographicalPermutation::getPreviousPermutation($number);
 print "The previous lexographical permutation of {$number} is {$previous}.\n";
+
 $first = LexographicalPermutation::getFirstPermutation($number);
 print "The first lexographical permutation of {$number} is {$first}.\n";
+
 $last = LexographicalPermutation::getLastPermutation($number);
 print "The last lexographical permutation of {$number} is {$last}.\n";
+
 $number = 3124;
 $all = print_r(LexographicalPermutation::getAllPermutations($number), TRUE);
 print "All lexographical permutations of {$number} are \n{$all}\n";
