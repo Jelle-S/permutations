@@ -120,7 +120,7 @@ class LexographicalPermutation {
    *   The last lexographical permutation.
    */
   public static function getLastPermutation($number) {
-    return strrev(static::getLastPermutation($number));
+    return strrev(static::getFirstPermutation($number));
   }
 
   /**
