@@ -5,11 +5,13 @@ php:
     - "7.1"
     - "nightly"
     - "hhvm"
-before_script:
-  - composer install
+install:
+  - composer self-update
+  - composer install --dev
 script: vendor/bin/phpunit
 addons:
     code_climate:
         repo_token: a419419b65eb60ca8bd19f67a54416b21e7e759c5674594cc0996f4304c8e42d
+after_success:
+  - vendor/bin/test-reporter
 sudo: false
-
