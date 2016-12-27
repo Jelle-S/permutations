@@ -7,7 +7,7 @@ php:
     - "hhvm"
 before_script:
   - composer install
-script: vendor/bin/phpunit .
+script: vendor/bin/phpunit
 addons:
     code_climate:
         repo_token: a419419b65eb60ca8bd19f67a54416b21e7e759c5674594cc0996f4304c8e42d
