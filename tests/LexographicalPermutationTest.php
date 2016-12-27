@@ -16,10 +16,10 @@ class LexographicalPermutationTest extends TestCase {
 
   const TEST_ITERATIONS = 3;
 
-  protected function getRandomNumber() {
+  protected function getRandomNumber($iteration) {
     $nums = range(0, 9);
     $random_number = '';
-    for ($i = 0; $i < 4; $i++) {
+    for ($i = 0; $i < 3; $i++) {
       $number = array_rand($nums);
       // Make sure the number consists of 4 different numbers.
       unset($nums[$number]);
@@ -28,10 +28,18 @@ class LexographicalPermutationTest extends TestCase {
     $random_number = intval($random_number);
     // Make sure this is not the first or last permutation, and make sure
     // the number consists of 4 different numbers.
+    $while = 0;
     while ($this->isFirstPermutation($random_number) || $this->isLastPermutation($random_number)) {
-      $random_number = intval(str_shuffle($random_number));
+      $random_number = str_shuffle($random_number);
+      $while ++;
+      if ($while > 100) {
+        $random_number = '423';
+        $nums = array_diff(range(0, 9), array(4,2,3));
+        break;
+      }
     }
-    return $random_number;
+    $random_number .= ($iteration % 2) ? min($nums) : max($nums);
+    return intval($random_number);
   }
 
   protected function isFirstPermutation($number) {
@@ -50,8 +58,8 @@ class LexographicalPermutationTest extends TestCase {
    * @covers ::getNextPermutation()
    */
   public function testGetNextPermutation() {
-    for ($iterations = 1; $iterations <= static::TEST_ITERATIONS; $iterations++) {
-      $number = $this->getRandomNumber();
+    for ($iteration = 1; $iteration <= static::TEST_ITERATIONS; $iteration++) {
+      $number = $this->getRandomNumber($iteration);
       $next = LexographicalPermutation::getNextPermutation($number);
       $arr_next = str_split($next);
       $arr_num = str_split($number);
@@ -68,8 +76,8 @@ class LexographicalPermutationTest extends TestCase {
    * @covers ::getPreviousPermutation()
    */
   public function testGetPreviousPermutation() {
-    for ($iterations = 1; $iterations <= static::TEST_ITERATIONS; $iterations++) {
-      $number = $this->getRandomNumber();
+    for ($iteration = 1; $iteration <= static::TEST_ITERATIONS; $iteration++) {
+      $number = $this->getRandomNumber($iteration);
       $previous = LexographicalPermutation::getPreviousPermutation($number);
       $arr_previous = str_split($previous);
       $arr_num = str_split($number);
@@ -86,8 +94,8 @@ class LexographicalPermutationTest extends TestCase {
    * @covers ::getFirstPermutation()
    */
   public function testGetFirstPermutation() {
-    for ($iterations = 1; $iterations <= static::TEST_ITERATIONS; $iterations++) {
-      $number = $this->getRandomNumber();
+    for ($iteration = 1; $iteration <= static::TEST_ITERATIONS; $iteration++) {
+      $number = $this->getRandomNumber($iteration);
       $first = LexographicalPermutation::getFirstPermutation($number);
       $this->assertLessThan($number, $first);
       $arr_num = str_split($number);
@@ -103,8 +111,8 @@ class LexographicalPermutationTest extends TestCase {
    * @covers ::getLastPermutation()
    */
   public function testGetLastPermutation() {
-    for ($iterations = 1; $iterations <= static::TEST_ITERATIONS; $iterations++) {
-      $number = $this->getRandomNumber();
+    for ($iteration = 1; $iteration <= static::TEST_ITERATIONS; $iteration++) {
+      $number = $this->getRandomNumber($iteration);
       $last = LexographicalPermutation::getLastPermutation($number);
       $this->assertGreaterThan($number, $last);
       $arr_num = str_split($number);
@@ -120,8 +128,8 @@ class LexographicalPermutationTest extends TestCase {
    * @covers ::getAllPermutations()
    */
   public function testGetAllPermutations() {
-    for ($iterations = 1; $iterations <= static::TEST_ITERATIONS; $iterations++) {
-      $number = $this->getRandomNumber();
+    for ($iteration = 1; $iteration <= static::TEST_ITERATIONS; $iteration++) {
+      $number = $this->getRandomNumber($iteration);
       $permutations = LexographicalPermutation::getAllPermutations($number);
       $this->assertTrue($this->isLastPermutation(end($permutations)));
       $this->assertTrue($this->isFirstPermutation(reset($permutations)));
