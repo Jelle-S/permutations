@@ -1,4 +1,5 @@
 Generates (lexographical) permutations.
+
 [![Build Status](https://travis-ci.org/Jelle-S/permutations.svg?branch=master)](https://travis-ci.org/Jelle-S/permutations) [![Code Climate](https://codeclimate.com/github/Jelle-S/permutations/badges/gpa.svg)](https://codeclimate.com/github/Jelle-S/permutations) [![Test Coverage](https://codeclimate.com/github/Jelle-S/permutations/badges/coverage.svg)](https://codeclimate.com/github/Jelle-S/permutations/coverage) [![Issue Count](https://codeclimate.com/github/Jelle-S/permutations/badges/issue_count.svg)](https://codeclimate.com/github/Jelle-S/permutations)
 
 ```php
