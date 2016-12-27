@@ -7,6 +7,14 @@ php:
     - "7.0"
     - "nightly"
     - hhvm
-script: phpunit .
+before_script:
+  - composer install
+script: vendor/bin/phpunit .
+#after_script:
+#  - export CODACY_PROJECT_TOKEN=b20b085ff2034bef823cb57fc5fc5330
+#  - php vendor/bin/codacycoverage clover build/logs/clover.xml
+#addons:
+#    code_climate:
+#        repo_token: a8f5180b33a321086511812119342d716afc1fad050282a81eb32ee168146399
 sudo: false
 
