@@ -1,6 +1,6 @@
 Generates (lexographical) permutations.
 
-[![Build Status](https://travis-ci.org/Jelle-S/permutations.svg?branch=master)](https://travis-ci.org/Jelle-S/permutations) [![Code Climate](https://codeclimate.com/github/Jelle-S/permutations/badges/gpa.svg)](https://codeclimate.com/github/Jelle-S/permutations) [![Test Coverage](https://codeclimate.com/github/Jelle-S/permutations/badges/coverage.svg)](https://codeclimate.com/github/Jelle-S/permutations/coverage) [![Issue Count](https://codeclimate.com/github/Jelle-S/permutations/badges/issue_count.svg)](https://codeclimate.com/github/Jelle-S/permutations)
+[![Build Status](https://travis-ci.org/Jelle-S/permutations.svg?branch=develop)](https://travis-ci.org/Jelle-S/permutations) [![Code Climate](https://codeclimate.com/github/Jelle-S/permutations/badges/gpa.svg)](https://codeclimate.com/github/Jelle-S/permutations) [![Test Coverage](https://codeclimate.com/github/Jelle-S/permutations/badges/coverage.svg)](https://codeclimate.com/github/Jelle-S/permutations/coverage) [![Issue Count](https://codeclimate.com/github/Jelle-S/permutations/badges/issue_count.svg)](https://codeclimate.com/github/Jelle-S/permutations)
 
 ```php
 use Jelle_S\Util\Permutation\LexographicalPermutation;
@@ -29,7 +29,7 @@ The next lexographical permutation of 12345 is 12354.
 The previous lexographical permutation of 32154 is 32145.
 The first lexographical permutation of 32154 is 12345.
 The last lexographical permutation of 32154 is 54321.
-All lexographical permutations of 3124 are 
+All lexographical permutations of 3124 are
 Array
 (
     [0] => 1234
