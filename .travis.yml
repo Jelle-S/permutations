@@ -11,7 +11,7 @@ install:
 script: vendor/bin/phpunit
 addons:
     code_climate:
-        repo_token: 237e5583976e07dd271ca4cc68951fd50f1f175cc2a7a2dc979755a716ad7c59
+        repo_token: e530cd25de990c7daeabd35f58ab744fa3644faedddbf19f96e9a6d898782a7a
 after_success:
   - vendor/bin/test-reporter
 sudo: false
